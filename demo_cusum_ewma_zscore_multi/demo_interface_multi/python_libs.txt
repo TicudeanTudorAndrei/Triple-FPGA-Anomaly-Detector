@@ -1,0 +1,7 @@
+To install all required Python libs, run the following and don't forget to replace <my_user> with your actual user:
+
+& "C:\Users\<my_user>\AppData\Local\Python\pythoncore-3.14-64\python.exe" -m pip install pyserial
+& "C:\Users\<my_user>\AppData\Local\Python\pythoncore-3.14-64\python.exe" -m pip install numpy
+& "C:\Users\<my_user>\AppData\Local\Python\pythoncore-3.14-64\python.exe" -m pip install matplotlib
+
+
