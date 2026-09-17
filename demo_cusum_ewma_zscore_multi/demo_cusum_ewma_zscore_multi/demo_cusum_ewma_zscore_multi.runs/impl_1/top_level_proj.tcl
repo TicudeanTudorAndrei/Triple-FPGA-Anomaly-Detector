@@ -17,7 +17,7 @@ proc create_report { reportName command } {
   }
 }
 namespace eval ::optrace {
-  variable script "E:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.runs/impl_1/top_level_proj.tcl"
+  variable script "C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.runs/impl_1/top_level_proj.tcl"
   variable category "vivado_impl"
 }
 
@@ -130,30 +130,30 @@ OPTRACE "create in-memory project" START { }
   set_param project.singleFileAddWarning.threshold 0
 OPTRACE "create in-memory project" END { }
 OPTRACE "set parameters" START { }
-  set_property webtalk.parent_dir E:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.cache/wt [current_project]
-  set_property parent.project_path E:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.xpr [current_project]
-  set_property ip_output_repo E:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.cache/ip [current_project]
+  set_property webtalk.parent_dir C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.cache/wt [current_project]
+  set_property parent.project_path C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.xpr [current_project]
+  set_property ip_output_repo C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO} [current_project]
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
-  add_files -quiet E:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.runs/synth_1/top_level_proj.dcp
-  read_ip -quiet E:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/ip/fp_sqrt/fp_sqrt.xci
-  read_ip -quiet E:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/ip/fp_mul/fp_mul.xci
-  read_ip -quiet E:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/ip/fp_add/fp_add.xci
-  read_ip -quiet E:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/ip/fifo32xN_buffering/fifo32xN_buffering.xci
-  read_ip -quiet E:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/ip/fifo32x16_buffering/fifo32x16_buffering.xci
-  read_ip -quiet E:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/ip/fp_comp/fp_comp.xci
-  read_ip -quiet E:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/ip/fp_acc/fp_acc.xci
-  read_ip -quiet E:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/ip/fifo32xN_sample/fifo32xN_sample.xci
-  read_ip -quiet E:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/ip/fp_broadcaster/fp_broadcaster.xci
-  read_ip -quiet E:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/ip/fp_broadcast_3/fp_broadcast_3.xci
-  read_ip -quiet E:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/ip/fp_abs/fp_abs.xci
-  read_ip -quiet E:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/ip/fp_div/fp_div.xci
-  read_ip -quiet E:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/ip/fp_sub/fp_sub.xci
-  read_ip -quiet E:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/ip/fifo16x64/fifo16x64.xci
+  add_files -quiet C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.runs/synth_1/top_level_proj.dcp
+  read_ip -quiet C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/ip/fp_sqrt/fp_sqrt.xci
+  read_ip -quiet C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/ip/fp_mul/fp_mul.xci
+  read_ip -quiet C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/ip/fp_add/fp_add.xci
+  read_ip -quiet C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/ip/fifo32xN_buffering/fifo32xN_buffering.xci
+  read_ip -quiet C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/ip/fifo32x16_buffering/fifo32x16_buffering.xci
+  read_ip -quiet C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/ip/fp_comp/fp_comp.xci
+  read_ip -quiet C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/ip/fp_acc/fp_acc.xci
+  read_ip -quiet C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/ip/fifo32xN_sample/fifo32xN_sample.xci
+  read_ip -quiet C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/ip/fp_broadcaster/fp_broadcaster.xci
+  read_ip -quiet C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/ip/fp_broadcast_3/fp_broadcast_3.xci
+  read_ip -quiet C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/ip/fp_abs/fp_abs.xci
+  read_ip -quiet C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/ip/fp_div/fp_div.xci
+  read_ip -quiet C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/ip/fp_sub/fp_sub.xci
+  read_ip -quiet C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/ip/fifo16x64/fifo16x64.xci
 OPTRACE "read constraints: implementation" START { }
-  read_xdc E:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/constrs_1/new/constr_file.xdc
+  read_xdc C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/constrs_1/new/constr_file.xdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "add files" END { }
 OPTRACE "link_design" START { }

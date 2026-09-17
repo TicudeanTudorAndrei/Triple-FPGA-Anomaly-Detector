@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="61" Path="E:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.xpr">
+<Project Version="7" Minor="61" Path="C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="30b4780317814289bb544bc68a2f35a3"/>

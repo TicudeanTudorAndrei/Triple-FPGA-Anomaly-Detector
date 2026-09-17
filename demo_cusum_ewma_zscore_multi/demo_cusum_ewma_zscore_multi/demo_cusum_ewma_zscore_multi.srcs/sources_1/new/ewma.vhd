@@ -5,12 +5,13 @@ use IEEE.std_logic_unsigned.all;
 use IEEE.numeric_std.all;
 
 entity ewma is
-generic ( NUM_STREAMS: integer := 2;
-ALPHA_HEX: STD_LOGIC_VECTOR(31 downto 0) := x"3e800000"; -- 0.25
-P_HEX: STD_LOGIC_VECTOR(31 downto 0) := x"3d4ccccd"; -- 0.05
-S0_HEX: STD_LOGIC_VECTOR(31 downto 0) := x"3fc00000"); -- 1.5
+generic ( NUM_STREAMS: integer := 2);
 port ( aclk: in STD_LOGIC;
 aresetn: in STD_LOGIC;
+
+alpha_data: in STD_LOGIC_VECTOR(NUM_STREAMS*32-1 downto 0);
+p_data:     in STD_LOGIC_VECTOR(NUM_STREAMS*32-1 downto 0);
+s0_data:    in STD_LOGIC_VECTOR(NUM_STREAMS*32-1 downto 0);
 
 x_tvalid: in STD_LOGIC;
 x_tdata: in STD_LOGIC_VECTOR(31 downto 0);
@@ -140,9 +141,10 @@ m_axis_tdata: out std_logic_vector(95 downto 0));
 end component;
 
 component fifo32x16_self_init_buffering is
-generic ( S0_HEX: STD_LOGIC_VECTOR(31 downto 0) := x"3fc00000");    -- 1.5
 port ( s_axis_aresetn: in STD_LOGIC;
 s_axis_aclk: in STD_LOGIC;
+
+s0_data: in STD_LOGIC_VECTOR(31 downto 0);
 
 s_axis_tvalid: in STD_LOGIC;
 s_axis_tready: out STD_LOGIC;
@@ -244,11 +246,23 @@ signal anom_id_fifo : id_fifo_t := (others => 0);
 signal anom_id_wr   : integer range 0 to ID_FIFO_DEPTH-1 := 0;
 signal anom_id_rd   : integer range 0 to ID_FIFO_DEPTH-1 := 0;
 
+-- alpha_id_fifo: pushed with ewma_id_fifo when x is consumed, popped when St result fires
+signal alpha_id_fifo : id_fifo_t := (others => 0);
+signal alpha_id_wr   : integer range 0 to ID_FIFO_DEPTH-1 := 0;
+signal alpha_id_rd   : integer range 0 to ID_FIFO_DEPTH-1 := 0;
+
+-- per-stream selected scalars
+signal alpha_selected : STD_LOGIC_VECTOR(31 downto 0) := (others => '0');
+signal p_selected     : STD_LOGIC_VECTOR(31 downto 0) := (others => '0');
+
 begin
 
 x_tready <= x_tready_streams;
 anomaly_tvalid <= anomaly_tvalid_signal;
 anomaly_id <= anomaly_id_signal;
+
+alpha_selected <= alpha_data(alpha_id_fifo(alpha_id_rd)*32+31 downto alpha_id_fifo(alpha_id_rd)*32);
+p_selected     <= p_data(ewma_id_fifo(ewma_id_rd)*32+31 downto ewma_id_fifo(ewma_id_rd)*32);
 
 -- take inputs
 process(aclk)
@@ -293,9 +307,12 @@ begin
             if fifo_x_m_tvalid(fifo_x_select) = '1' and x_fifo_inp_tready = '1' then
                 fifo_x_ready_pulse(fifo_x_select)  <= '1';
                 fifo_st_ready_pulse(fifo_x_select) <= '1';
-                ewma_id_fifo(ewma_id_wr) <= fifo_x_select;
+                ewma_id_fifo(ewma_id_wr)   <= fifo_x_select;
+                alpha_id_fifo(alpha_id_wr) <= fifo_x_select;
                 if ewma_id_wr = ID_FIFO_DEPTH - 1 then ewma_id_wr <= 0;
                 else ewma_id_wr <= ewma_id_wr + 1; end if;
+                if alpha_id_wr = ID_FIFO_DEPTH - 1 then alpha_id_wr <= 0;
+                else alpha_id_wr <= alpha_id_wr + 1; end if;
             end if;
 
             -- Always advance
@@ -372,7 +389,7 @@ s_axis_a_tdata => x_St_1_tdata,
 s_axis_a_tready => x_St_1_tready,
 
 s_axis_b_tvalid => x_St_1_tvalid,
-s_axis_b_tdata => ALPHA_HEX,
+s_axis_b_tdata => alpha_selected,
 s_axis_b_tready => alpha_tready,
 
 m_axis_result_tvalid => mul_alpha_tvalid,
@@ -426,7 +443,7 @@ port map ( aclk => aclk,
 aresetn => aresetn,
 
 s_axis_a_tvalid => broadcaster_St_tvalid(1),
-s_axis_a_tdata => P_HEX,
+s_axis_a_tdata => p_selected,
 s_axis_a_tready => p_tready,
 
 s_axis_b_tvalid => broadcaster_St_tvalid(1),
@@ -444,10 +461,17 @@ process(aclk)
 begin
     if rising_edge(aclk) then
         if aresetn = '0' then
-            ewma_id_rd <= 0;
-            anom_id_wr <= 0;
-            anom_id_rd <= 0;
+            ewma_id_rd  <= 0;
+            anom_id_wr  <= 0;
+            anom_id_rd  <= 0;
+            alpha_id_rd <= 0;
         else
+            -- pop alpha_id_fifo when St result is produced (add_St fires)
+            if St_tvalid = '1' and St_tready = '1' then
+                if alpha_id_rd = ID_FIFO_DEPTH - 1 then alpha_id_rd <= 0;
+                else alpha_id_rd <= alpha_id_rd + 1; end if;
+            end if;
+
             if broadcaster_St_tvalid(2) = '1' then
                 anom_id_fifo(anom_id_wr) <= ewma_id_fifo(ewma_id_rd);
                 if anom_id_wr = ID_FIFO_DEPTH - 1 then anom_id_wr <= 0;
@@ -477,9 +501,10 @@ end process;
 
 fifo_feedback_instances: for i in 0 to NUM_STREAMS-1
 generate fifo_feedback_inst_i: fifo32x16_self_init_buffering
-    generic map( S0_HEX => S0_HEX)
     port map ( s_axis_aresetn => aresetn,
     s_axis_aclk => aclk,
+
+    s0_data => s0_data(i*32+31 downto i*32),
 
     s_axis_tvalid => st_tvalid_streams(i),
     s_axis_tready => st_tready_streams(i),

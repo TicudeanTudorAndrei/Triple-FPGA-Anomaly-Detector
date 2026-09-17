@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "E:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.runs/synth_1/top_level_proj.tcl"
+  variable script "C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.runs/synth_1/top_level_proj.tcl"
   variable category "vivado_synth"
 }
 
@@ -79,81 +79,81 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir E:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.cache/wt [current_project]
-set_property parent.project_path E:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.xpr [current_project]
+set_property webtalk.parent_dir C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.cache/wt [current_project]
+set_property parent.project_path C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.xpr [current_project]
 set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo e:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.cache/ip [current_project]
+set_property ip_output_repo c:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_vhdl -library xil_defaultlib {
-  E:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/new/axi_register.vhd
-  E:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/new/ewma.vhd
-  E:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/new/fifo32x16_self_init_buffering.vhd
-  E:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/new/fp_clasif.vhd
-  E:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/new/fp_clasif_zscore.vhd
-  E:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/new/fp_div_buffering.vhd
-  E:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/new/mean.vhd
-  E:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/new/mpg.vhd
-  E:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/new/multi_stream_cusum_anomaly_detector_top_module.vhd
-  E:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/new/multi_stream_int_adder_subtractor.vhd
-  E:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/new/multi_stream_int_cumulative_sums_detector.vhd
-  E:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/new/multi_stream_int_max.vhd
-  E:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/new/multi_stream_int_threshold_exceeding_detector.vhd
-  E:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/new/sqrd_dev.vhd
-  E:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/new/ssd.vhd
-  E:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/new/std_dev.vhd
-  E:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/new/stream_selector.vhd
-  E:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/new/sum.vhd
-  E:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/new/sum_buffering.vhd
-  E:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/new/sum_buffering_small.vhd
-  E:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/new/uart_rx.vhd
-  E:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/new/uart_tx.vhd
-  E:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/new/zscore.vhd
-  E:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/new/top_level_project.vhd
+  C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/new/axi_register.vhd
+  C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/new/ewma.vhd
+  C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/new/fifo32x16_self_init_buffering.vhd
+  C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/new/fp_clasif.vhd
+  C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/new/fp_clasif_zscore.vhd
+  C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/new/fp_div_buffering.vhd
+  C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/new/mean.vhd
+  C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/new/mpg.vhd
+  C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/new/multi_stream_cusum_anomaly_detector_top_module.vhd
+  C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/new/multi_stream_int_adder_subtractor.vhd
+  C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/new/multi_stream_int_cumulative_sums_detector.vhd
+  C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/new/multi_stream_int_max.vhd
+  C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/new/multi_stream_int_threshold_exceeding_detector.vhd
+  C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/new/sqrd_dev.vhd
+  C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/new/ssd.vhd
+  C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/new/std_dev.vhd
+  C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/new/stream_selector.vhd
+  C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/new/sum.vhd
+  C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/new/sum_buffering.vhd
+  C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/new/sum_buffering_small.vhd
+  C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/new/uart_rx.vhd
+  C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/new/uart_tx.vhd
+  C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/new/zscore.vhd
+  C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/new/top_level_project.vhd
 }
-read_ip -quiet E:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/ip/fp_sqrt/fp_sqrt.xci
-set_property used_in_implementation false [get_files -all e:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/lic_proj.gen/sources_1/ip/fp_sqrt/fp_sqrt_ooc.xdc]
+read_ip -quiet C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/ip/fp_sqrt/fp_sqrt.xci
+set_property used_in_implementation false [get_files -all c:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/lic_proj.gen/sources_1/ip/fp_sqrt/fp_sqrt_ooc.xdc]
 
-read_ip -quiet E:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/ip/fp_mul/fp_mul.xci
-set_property used_in_implementation false [get_files -all e:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/lic_proj.gen/sources_1/ip/fp_mul/fp_mul_ooc.xdc]
+read_ip -quiet C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/ip/fp_mul/fp_mul.xci
+set_property used_in_implementation false [get_files -all c:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/lic_proj.gen/sources_1/ip/fp_mul/fp_mul_ooc.xdc]
 
-read_ip -quiet E:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/ip/fp_add/fp_add.xci
-set_property used_in_implementation false [get_files -all e:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/ewma_single.gen/sources_1/ip/fp_add/fp_add_ooc.xdc]
+read_ip -quiet C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/ip/fp_add/fp_add.xci
+set_property used_in_implementation false [get_files -all c:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/ewma_single.gen/sources_1/ip/fp_add/fp_add_ooc.xdc]
 
-read_ip -quiet E:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/ip/fifo32xN_buffering/fifo32xN_buffering.xci
-set_property used_in_implementation false [get_files -all e:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/lic_proj3.gen/sources_1/ip/fifo32xN_buffering/fifo32xN_buffering_ooc.xdc]
+read_ip -quiet C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/ip/fifo32xN_buffering/fifo32xN_buffering.xci
+set_property used_in_implementation false [get_files -all c:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/lic_proj3.gen/sources_1/ip/fifo32xN_buffering/fifo32xN_buffering_ooc.xdc]
 
-read_ip -quiet E:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/ip/fifo32x16_buffering/fifo32x16_buffering.xci
-set_property used_in_implementation false [get_files -all e:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/lic_proj3.gen/sources_1/ip/fifo32x16_buffering/fifo32x16_buffering_ooc.xdc]
+read_ip -quiet C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/ip/fifo32x16_buffering/fifo32x16_buffering.xci
+set_property used_in_implementation false [get_files -all c:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/lic_proj3.gen/sources_1/ip/fifo32x16_buffering/fifo32x16_buffering_ooc.xdc]
 
-read_ip -quiet E:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/ip/fp_comp/fp_comp.xci
-set_property used_in_implementation false [get_files -all e:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/project_1.gen/sources_1/ip/fp_comp/fp_comp_ooc.xdc]
+read_ip -quiet C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/ip/fp_comp/fp_comp.xci
+set_property used_in_implementation false [get_files -all c:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/project_1.gen/sources_1/ip/fp_comp/fp_comp_ooc.xdc]
 
-read_ip -quiet E:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/ip/fp_acc/fp_acc.xci
-set_property used_in_implementation false [get_files -all e:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/lic_proj.gen/sources_1/ip/fp_acc/fp_acc_ooc.xdc]
+read_ip -quiet C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/ip/fp_acc/fp_acc.xci
+set_property used_in_implementation false [get_files -all c:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/lic_proj.gen/sources_1/ip/fp_acc/fp_acc_ooc.xdc]
 
-read_ip -quiet E:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/ip/fifo32xN_sample/fifo32xN_sample.xci
-set_property used_in_implementation false [get_files -all e:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/lic_proj3.gen/sources_1/ip/fifo32xN_sample/fifo32xN_sample_ooc.xdc]
+read_ip -quiet C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/ip/fifo32xN_sample/fifo32xN_sample.xci
+set_property used_in_implementation false [get_files -all c:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/lic_proj3.gen/sources_1/ip/fifo32xN_sample/fifo32xN_sample_ooc.xdc]
 
-read_ip -quiet E:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/ip/fp_broadcaster/fp_broadcaster.xci
-set_property used_in_implementation false [get_files -all e:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/lic_proj3.gen/sources_1/ip/fp_broadcaster/fp_broadcaster_ooc.xdc]
+read_ip -quiet C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/ip/fp_broadcaster/fp_broadcaster.xci
+set_property used_in_implementation false [get_files -all c:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/lic_proj3.gen/sources_1/ip/fp_broadcaster/fp_broadcaster_ooc.xdc]
 
-read_ip -quiet E:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/ip/fp_broadcast_3/fp_broadcast_3.xci
-set_property used_in_implementation false [get_files -all e:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/ewma_single.gen/sources_1/ip/fp_broadcast_3/fp_broadcast_3_ooc.xdc]
+read_ip -quiet C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/ip/fp_broadcast_3/fp_broadcast_3.xci
+set_property used_in_implementation false [get_files -all c:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/ewma_single.gen/sources_1/ip/fp_broadcast_3/fp_broadcast_3_ooc.xdc]
 
-read_ip -quiet E:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/ip/fp_abs/fp_abs.xci
+read_ip -quiet C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/ip/fp_abs/fp_abs.xci
 
-read_ip -quiet E:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/ip/fp_div/fp_div.xci
-set_property used_in_implementation false [get_files -all e:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/lic_proj.gen/sources_1/ip/fp_div/fp_div_ooc.xdc]
+read_ip -quiet C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/ip/fp_div/fp_div.xci
+set_property used_in_implementation false [get_files -all c:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/lic_proj.gen/sources_1/ip/fp_div/fp_div_ooc.xdc]
 
-read_ip -quiet E:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/ip/fp_sub/fp_sub.xci
-set_property used_in_implementation false [get_files -all e:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/lic_proj.gen/sources_1/ip/fp_sub/fp_sub_ooc.xdc]
+read_ip -quiet C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/ip/fp_sub/fp_sub.xci
+set_property used_in_implementation false [get_files -all c:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/lic_proj.gen/sources_1/ip/fp_sub/fp_sub_ooc.xdc]
 
-read_ip -quiet E:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/ip/fifo16x64/fifo16x64.xci
-set_property used_in_implementation false [get_files -all e:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/int_cusum_multi_stream.gen/sources_1/ip/fifo16x64/fifo16x64_ooc.xdc]
+read_ip -quiet C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/sources_1/ip/fifo16x64/fifo16x64.xci
+set_property used_in_implementation false [get_files -all c:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/int_cusum_multi_stream.gen/sources_1/ip/fifo16x64/fifo16x64_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -164,12 +164,12 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc E:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/constrs_1/new/constr_file.xdc
-set_property used_in_implementation false [get_files E:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/constrs_1/new/constr_file.xdc]
+read_xdc C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/constrs_1/new/constr_file.xdc
+set_property used_in_implementation false [get_files C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/constrs_1/new/constr_file.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 
-read_checkpoint -auto_incremental -incremental E:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/utils_1/imports/synth_1/top_level_proj.dcp
+read_checkpoint -auto_incremental -incremental C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/utils_1/imports/synth_1/top_level_proj.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }

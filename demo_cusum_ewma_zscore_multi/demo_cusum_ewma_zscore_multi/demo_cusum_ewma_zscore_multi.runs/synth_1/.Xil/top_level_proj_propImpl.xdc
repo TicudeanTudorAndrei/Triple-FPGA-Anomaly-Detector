@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:E:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/constrs_1/new/constr_file.xdc rfile:../../../demo_cusum_ewma_zscore_multi.srcs/constrs_1/new/constr_file.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.srcs/constrs_1/new/constr_file.xdc rfile:../../../demo_cusum_ewma_zscore_multi.srcs/constrs_1/new/constr_file.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:7 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN E3 [get_ports clk]
 set_property src_info {type:XDC file:1 line:14 export:INPUT save:INPUT read:READ} [current_design]

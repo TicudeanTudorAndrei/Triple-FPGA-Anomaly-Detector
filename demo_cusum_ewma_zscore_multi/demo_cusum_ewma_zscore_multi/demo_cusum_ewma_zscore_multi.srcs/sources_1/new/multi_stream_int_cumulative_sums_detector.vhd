@@ -21,11 +21,11 @@ entity multi_stream_int_cumulative_sums_detector is
            previous_sensor_in_ready : out STD_LOGIC;
            previous_sensor_in_valid : in STD_LOGIC;
            
-           threshold_data : in STD_LOGIC_VECTOR (31 downto 0);
+           threshold_data : in STD_LOGIC_VECTOR (NUM_SENSORS*32-1 downto 0);
            threshold_ready : out STD_LOGIC;
            threshold_valid : in STD_LOGIC;
-           
-           drift_data : in STD_LOGIC_VECTOR (31 downto 0);
+
+           drift_data : in STD_LOGIC_VECTOR (NUM_SENSORS*32-1 downto 0);
            drift_ready : out STD_LOGIC;
            drift_valid : in STD_LOGIC;
            
@@ -146,6 +146,8 @@ signal max_gn_in, max_gp_in, max_gn_out, max_gp_out, gn_t, gp_t, gn_fifo_in, gp_
 signal timestamp_i : STD_LOGIC_VECTOR (31 downto 0) := (others => '0');
 signal abnormal_flag : STD_LOGIC;
 signal s_t_result, tagged_drift, tagged_zero : STD_LOGIC_VECTOR (63 downto 0);
+signal drift_selected     : STD_LOGIC_VECTOR (31 downto 0);
+signal threshold_selected : STD_LOGIC_VECTOR (31 downto 0);
 
 -- ready signals
 signal current_sensor_measurement_ready, previous_sensor_measurement_ready : STD_LOGIC;
@@ -440,7 +442,23 @@ begin
         m_axis_tdata => gp_s_t_out   
     );
     
-    tagged_drift <= drift_data & gn_s_t_out(31 downto 0);
+    -- Select per-stream drift using the stream ID carried in data[31:16]
+    process(drift_data, gn_s_t_out)
+        variable sid : integer range 0 to NUM_SENSORS-1;
+    begin
+        sid := to_integer(unsigned(gn_s_t_out(31 downto 16)));
+        drift_selected <= drift_data(sid*32+31 downto sid*32);
+    end process;
+
+    -- Select per-stream threshold using stream ID in max_gn_out[31:16]
+    process(threshold_data, max_gn_out)
+        variable sid : integer range 0 to NUM_SENSORS-1;
+    begin
+        sid := to_integer(unsigned(max_gn_out(31 downto 16)));
+        threshold_selected <= threshold_data(sid*32+31 downto sid*32);
+    end process;
+
+    tagged_drift <= drift_selected & gn_s_t_out(31 downto 0);
     
     gn_drift_sub : multi_stream_int_adder_subtractor port map (
         aclk => clk,
@@ -560,7 +578,7 @@ begin
         gn_in_data => max_gn_out,
         th_valid => th_valid,
         th_ready => threshold_ready,
-        th_data => threshold_data,
+        th_data => threshold_selected,
         abnormal_valid => combine_valid(0),
         abnormal_ready => combine_ready(0),
         abnormal_data => combined_data(8),

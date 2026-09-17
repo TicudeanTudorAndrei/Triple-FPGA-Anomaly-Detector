@@ -9,25 +9,25 @@ entity multi_stream_cusum_anomaly_detector_top_module is
         -- control inputs
         clk : in STD_LOGIC;
         rst : in STD_LOGIC;
-        
+
         -- data inputs
         input_value_data : in STD_LOGIC_VECTOR (63 downto 0);
         input_value_ready : out STD_LOGIC;
         input_value_valid : in STD_LOGIC;
-        
-        threshold_data : in STD_LOGIC_VECTOR (31 downto 0);
+
+        threshold_data : in STD_LOGIC_VECTOR (NUM_SENSORS*32-1 downto 0);
         threshold_ready : out STD_LOGIC;
         threshold_valid : in STD_LOGIC;
-       
-        drift_data : in STD_LOGIC_VECTOR (31 downto 0);
+
+        drift_data : in STD_LOGIC_VECTOR (NUM_SENSORS*32-1 downto 0);
         drift_ready : out STD_LOGIC;
         drift_valid : in STD_LOGIC;
-       
+
        -- data outputs
         labeled_data : out STD_LOGIC_VECTOR (63 downto 0);
         labeled_data_ready : in STD_LOGIC;
         labeled_data_valid : out STD_LOGIC;
-       
+
         timestamp_data : out STD_LOGIC_VECTOR (31 downto 0);
         timestamp_ready : in STD_LOGIC;
         timestamp_valid : out STD_LOGIC
@@ -40,33 +40,33 @@ component multi_stream_int_cumulative_sums_detector is
     Generic (
         NUM_SENSORS : integer := 2
     );
-    Port ( 
+    Port (
         -- control inputs
         clk : in STD_LOGIC;
         rst : in STD_LOGIC;
-       
+
         -- data inputs
         current_sensor_in_data : in STD_LOGIC_VECTOR (63 downto 0);
         current_sensor_in_ready : out STD_LOGIC;
         current_sensor_in_valid : in STD_LOGIC;
-       
+
         previous_sensor_in_data : in STD_LOGIC_VECTOR (63 downto 0);
         previous_sensor_in_ready : out STD_LOGIC;
         previous_sensor_in_valid : in STD_LOGIC;
-       
-        threshold_data : in STD_LOGIC_VECTOR (31 downto 0);
+
+        threshold_data : in STD_LOGIC_VECTOR (NUM_SENSORS*32-1 downto 0);
         threshold_ready : out STD_LOGIC;
         threshold_valid : in STD_LOGIC;
-       
-        drift_data : in STD_LOGIC_VECTOR (31 downto 0);
+
+        drift_data : in STD_LOGIC_VECTOR (NUM_SENSORS*32-1 downto 0);
         drift_ready : out STD_LOGIC;
         drift_valid : in STD_LOGIC;
-       
+
         -- outputs
         labeled_data : out STD_LOGIC_VECTOR (63 downto 0);
         labeled_data_ready : in STD_LOGIC;
         labeled_data_valid : out STD_LOGIC;
-       
+
         timestamp_data : out STD_LOGIC_VECTOR (31 downto 0);
         timestamp_ready : in STD_LOGIC;
         timestamp_valid : out STD_LOGIC);
@@ -80,17 +80,17 @@ component stream_selector is
         -- control inputs
         clk : in STD_LOGIC;
         rst : in STD_LOGIC;
-        
+
         -- data inputs
         input_value_data : in STD_LOGIC_VECTOR (63 downto 0);
         input_value_ready : out STD_LOGIC;
         input_value_valid : in STD_LOGIC;
-        
+
         -- data outputs
         current_sensor_data : out STD_LOGIC_VECTOR (63 downto 0);
         current_sensor_ready : in STD_LOGIC;
         current_sensor_valid : out STD_LOGIC;
-       
+
         previous_sensor_data : out STD_LOGIC_VECTOR (63 downto 0);
         previous_sensor_ready : in STD_LOGIC;
         previous_sensor_valid : out STD_LOGIC
@@ -103,9 +103,8 @@ signal current_sensor_valid, previous_sensor_valid : STD_LOGIC;
 
 begin
 
-
     st_selector : stream_selector generic map (
-        NUM_SENSORS => NUM_SENSORS    
+        NUM_SENSORS => NUM_SENSORS
     )
     port map(
         clk => clk,
@@ -118,9 +117,9 @@ begin
         current_sensor_valid => current_sensor_valid,
         previous_sensor_data => previous_sensor_data,
         previous_sensor_ready => previous_sensor_ready,
-        previous_sensor_valid => previous_sensor_valid  
+        previous_sensor_valid => previous_sensor_valid
     );
-    
+
     cusum : multi_stream_int_cumulative_sums_detector generic map (
         NUM_SENSORS => NUM_SENSORS
     )
@@ -146,5 +145,5 @@ begin
         timestamp_ready => timestamp_ready,
         timestamp_valid => timestamp_valid
     );
-    
+
 end Structural;

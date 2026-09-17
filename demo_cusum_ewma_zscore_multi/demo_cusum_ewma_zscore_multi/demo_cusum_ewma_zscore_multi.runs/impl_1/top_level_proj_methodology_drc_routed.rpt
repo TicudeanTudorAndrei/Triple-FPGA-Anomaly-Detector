@@ -1,8 +1,8 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
-| Date         : Wed Apr 22 19:50:10 2026
-| Host         : DESKTOP-LU6EQ9E running 64-bit major release  (build 9200)
+| Date         : Wed Jun 17 13:41:41 2026
+| Host         : HYB-ZEIVQOenqBQ running 64-bit major release  (build 9200)
 | Command      : report_methodology -file top_level_proj_methodology_drc_routed.rpt -pb top_level_proj_methodology_drc_routed.pb -rpx top_level_proj_methodology_drc_routed.rpx
 | Design       : top_level_proj
 | Device       : xc7a100tcsg324-1
@@ -23,15 +23,35 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 33
+             Violations found: 50
 +-----------+----------+-------------------------------+------------+
 | Rule      | Severity | Description                   | Violations |
 +-----------+----------+-------------------------------+------------+
-| TIMING-18 | Warning  | Missing input or output delay | 33         |
+| LUTAR-1   | Warning  | LUT drives async reset alert  | 1          |
+| TIMING-18 | Warning  | Missing input or output delay | 49         |
 +-----------+----------+-------------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
+LUTAR-1#1 Warning
+LUT drives async reset alert  
+LUT cell cusum_inst/st_selector/previous_values[3][31]_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) cusum_inst/st_selector/previous_values_reg[3][26]/CLR,
+cusum_inst/st_selector/previous_values_reg[3][27]/CLR,
+cusum_inst/st_selector/previous_values_reg[3][28]/CLR,
+cusum_inst/st_selector/previous_values_reg[3][29]/CLR,
+cusum_inst/st_selector/previous_values_reg[3][2]/CLR,
+cusum_inst/st_selector/previous_values_reg[3][30]/CLR,
+cusum_inst/st_selector/previous_values_reg[3][31]/CLR,
+cusum_inst/st_selector/previous_values_reg[3][3]/CLR,
+cusum_inst/st_selector/previous_values_reg[3][4]/CLR,
+cusum_inst/st_selector/previous_values_reg[3][5]/CLR,
+cusum_inst/st_selector/previous_values_reg[3][6]/CLR,
+cusum_inst/st_selector/previous_values_reg[3][7]/CLR,
+cusum_inst/st_selector/previous_values_reg[3][8]/CLR,
+cusum_inst/st_selector/previous_values_reg[3][9]/CLR,
+cusum_inst/st_selector/state_reg/CLR (the first 15 of 137 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
 TIMING-18#1 Warning
 Missing input or output delay  
 An input delay is missing on sw[0] relative to clock(s) clk
@@ -193,6 +213,86 @@ An output delay is missing on cat[6] relative to clock(s) clk
 Related violations: <none>
 
 TIMING-18#33 Warning
+Missing input or output delay  
+An output delay is missing on led[0] relative to clock(s) clk
+Related violations: <none>
+
+TIMING-18#34 Warning
+Missing input or output delay  
+An output delay is missing on led[10] relative to clock(s) clk
+Related violations: <none>
+
+TIMING-18#35 Warning
+Missing input or output delay  
+An output delay is missing on led[11] relative to clock(s) clk
+Related violations: <none>
+
+TIMING-18#36 Warning
+Missing input or output delay  
+An output delay is missing on led[12] relative to clock(s) clk
+Related violations: <none>
+
+TIMING-18#37 Warning
+Missing input or output delay  
+An output delay is missing on led[13] relative to clock(s) clk
+Related violations: <none>
+
+TIMING-18#38 Warning
+Missing input or output delay  
+An output delay is missing on led[14] relative to clock(s) clk
+Related violations: <none>
+
+TIMING-18#39 Warning
+Missing input or output delay  
+An output delay is missing on led[15] relative to clock(s) clk
+Related violations: <none>
+
+TIMING-18#40 Warning
+Missing input or output delay  
+An output delay is missing on led[1] relative to clock(s) clk
+Related violations: <none>
+
+TIMING-18#41 Warning
+Missing input or output delay  
+An output delay is missing on led[2] relative to clock(s) clk
+Related violations: <none>
+
+TIMING-18#42 Warning
+Missing input or output delay  
+An output delay is missing on led[3] relative to clock(s) clk
+Related violations: <none>
+
+TIMING-18#43 Warning
+Missing input or output delay  
+An output delay is missing on led[4] relative to clock(s) clk
+Related violations: <none>
+
+TIMING-18#44 Warning
+Missing input or output delay  
+An output delay is missing on led[5] relative to clock(s) clk
+Related violations: <none>
+
+TIMING-18#45 Warning
+Missing input or output delay  
+An output delay is missing on led[6] relative to clock(s) clk
+Related violations: <none>
+
+TIMING-18#46 Warning
+Missing input or output delay  
+An output delay is missing on led[7] relative to clock(s) clk
+Related violations: <none>
+
+TIMING-18#47 Warning
+Missing input or output delay  
+An output delay is missing on led[8] relative to clock(s) clk
+Related violations: <none>
+
+TIMING-18#48 Warning
+Missing input or output delay  
+An output delay is missing on led[9] relative to clock(s) clk
+Related violations: <none>
+
+TIMING-18#49 Warning
 Missing input or output delay  
 An output delay is missing on uart_rxd_out relative to clock(s) clk
 Related violations: <none>

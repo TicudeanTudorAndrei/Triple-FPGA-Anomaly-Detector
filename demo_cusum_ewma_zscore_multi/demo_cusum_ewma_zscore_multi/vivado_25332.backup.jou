@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Tue Jun 16 14:25:17 2026
+# Process ID: 25332
+# Current directory: C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent3448 C:\VivadoProjects\demo_cusum_ewma_zscore_multi\demo_cusum_ewma_zscore_multi\demo_cusum_ewma_zscore_multi.xpr
+# Log file: C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/vivado.log
+# Journal file: C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi\vivado.jou
+# Running On: HYB-ZEIVQOenqBQ, OS: Windows, CPU Frequency: 3379 MHz, CPU Physical cores: 12, Host memory: 33777 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/VivadoProjects/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi/demo_cusum_ewma_zscore_multi.xpr

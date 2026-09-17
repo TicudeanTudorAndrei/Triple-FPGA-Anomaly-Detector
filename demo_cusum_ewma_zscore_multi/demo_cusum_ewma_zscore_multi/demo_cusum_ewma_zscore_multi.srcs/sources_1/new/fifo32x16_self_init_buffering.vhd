@@ -5,9 +5,10 @@ use IEEE.std_logic_unsigned.all;
 use IEEE.numeric_std.all;
 
 entity fifo32x16_self_init_buffering is
-generic ( S0_HEX: STD_LOGIC_VECTOR(31 downto 0) := x"3fc00000"); -- 1.5
 port ( s_axis_aresetn: in STD_LOGIC;
 s_axis_aclk: in STD_LOGIC;
+
+s0_data: in STD_LOGIC_VECTOR(31 downto 0);
 
 s_axis_tvalid: in STD_LOGIC;
 s_axis_tready: out STD_LOGIC;
@@ -61,7 +62,7 @@ m_axis_tvalid <= m_tvalid;
 m_axis_tdata <= m_tdata;
 
 with is_first select
-    s_tdata <= S0_HEX when '1',
+    s_tdata <= s0_data when '1',
                s_axis_tdata when others;
                
 with is_first select

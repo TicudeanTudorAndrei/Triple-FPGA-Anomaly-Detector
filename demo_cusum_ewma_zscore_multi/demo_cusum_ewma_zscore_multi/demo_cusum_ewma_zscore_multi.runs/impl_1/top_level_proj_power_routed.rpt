@@ -1,8 +1,8 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
-| Date             : Wed Apr 22 19:50:18 2026
-| Host             : DESKTOP-LU6EQ9E running 64-bit major release  (build 9200)
+| Date             : Wed Jun 17 13:41:48 2026
+| Host             : HYB-ZEIVQOenqBQ running 64-bit major release  (build 9200)
 | Command          : report_power -file top_level_proj_power_routed.rpt -pb top_level_proj_power_summary_routed.pb -rpx top_level_proj_power_routed.rpx
 | Design           : top_level_proj
 | Device           : xc7a100tcsg324-1
@@ -30,11 +30,11 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.419        |
+| Total On-Chip Power (W)  | 0.409        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.320        |
-| Device Static (W)        | 0.100        |
+| Dynamic (W)              | 0.310        |
+| Device Static (W)        | 0.099        |
 | Effective TJA (C/W)      | 4.6          |
 | Max Ambient (C)          | 83.1         |
 | Junction Temperature (C) | 26.9         |
@@ -52,20 +52,21 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.083 |        3 |       --- |             --- |
-| Slice Logic              |     0.089 |    50708 |       --- |             --- |
-|   LUT as Logic           |     0.069 |    13505 |     63400 |           21.30 |
-|   Register               |     0.008 |    22116 |    126800 |           17.44 |
-|   CARRY4                 |     0.006 |     1655 |     15850 |           10.44 |
-|   LUT as Shift Register  |     0.003 |     1013 |     19000 |            5.33 |
-|   LUT as Distributed RAM |     0.003 |      598 |     19000 |            3.15 |
-|   Others                 |     0.000 |     5879 |       --- |             --- |
-| Signals                  |     0.095 |    29626 |       --- |             --- |
-| Block RAM                |     0.022 |       30 |       135 |           22.22 |
-| DSPs                     |     0.026 |       65 |       240 |           27.08 |
-| I/O                      |     0.006 |       38 |       210 |           18.10 |
-| Static Power             |     0.100 |          |           |                 |
-| Total                    |     0.419 |          |           |                 |
+| Clocks                   |     0.086 |        3 |       --- |             --- |
+| Slice Logic              |     0.084 |    51978 |       --- |             --- |
+|   LUT as Logic           |     0.065 |    13834 |     63400 |           21.82 |
+|   Register               |     0.007 |    22979 |    126800 |           18.12 |
+|   CARRY4                 |     0.006 |     1678 |     15850 |           10.59 |
+|   LUT as Shift Register  |     0.004 |     1013 |     19000 |            5.33 |
+|   LUT as Distributed RAM |     0.001 |      602 |     19000 |            3.17 |
+|   F7/F8 Muxes            |    <0.001 |        4 |     63400 |           <0.01 |
+|   Others                 |     0.000 |     5887 |       --- |             --- |
+| Signals                  |     0.087 |    30717 |       --- |             --- |
+| Block RAM                |     0.009 |       30 |       135 |           22.22 |
+| DSPs                     |     0.028 |       65 |       240 |           27.08 |
+| I/O                      |     0.015 |       38 |       210 |           18.10 |
+| Static Power             |     0.099 |          |           |                 |
+| Total                    |     0.409 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -75,16 +76,16 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.329 |       0.313 |      0.017 |       NA    | Unspecified | NA         |
-| Vccaux    |       1.800 |     0.018 |       0.000 |      0.018 |       NA    | Unspecified | NA         |
-| Vcco33    |       3.300 |     0.006 |       0.002 |      0.004 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.311 |       0.295 |      0.017 |       NA    | Unspecified | NA         |
+| Vccaux    |       1.800 |     0.019 |       0.001 |      0.018 |       NA    | Unspecified | NA         |
+| Vcco33    |       3.300 |     0.008 |       0.004 |      0.004 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
-| Vccbram   |       1.000 |     0.002 |       0.001 |      0.001 |       NA    | Unspecified | NA         |
+| Vccbram   |       1.000 |     0.001 |       0.000 |      0.001 |       NA    | Unspecified | NA         |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vccadc    |       1.800 |     0.020 |       0.000 |      0.020 |       NA    | Unspecified | NA         |
@@ -144,53 +145,35 @@ Table of Contents
 +-------------------------------------------------------+-----------+
 | Name                                                  | Power (W) |
 +-------------------------------------------------------+-----------+
-| top_level_proj                                        |     0.320 |
-|   cusum_inst                                          |     0.014 |
-|     cusum                                             |     0.013 |
-|       gn_s_t_fifo_buffer                              |     0.001 |
-|       gp_s_t_fifo_buffer                              |     0.001 |
-|       max_gn_fifo_buffer                              |     0.001 |
-|   ewma_inst                                           |     0.048 |
-|     add_St_inst                                       |     0.008 |
-|       inst                                            |     0.008 |
-|     clasif_inst                                       |     0.002 |
-|       fp_comp_inst                                    |     0.002 |
-|     fifo_St_1_inst                                    |     0.001 |
-|       inst                                            |     0.001 |
-|     fifo_feedback_instances[0].fifo_feedback_inst_i   |     0.001 |
-|     fifo_feedback_instances[1].fifo_feedback_inst_i   |     0.002 |
-|     fifo_feedback_instances[2].fifo_feedback_inst_i   |     0.001 |
-|     fifo_feedback_instances[3].fifo_feedback_inst_i   |     0.001 |
-|     fifo_input_instances[0].fifo_input_inst_i         |     0.001 |
-|       inst                                            |     0.001 |
-|     fifo_input_instances[2].fifo_input_inst_i         |     0.001 |
-|       inst                                            |     0.001 |
-|     fifo_input_instances[3].fifo_input_inst_i         |     0.001 |
-|       inst                                            |     0.001 |
-|     fifo_x_inst                                       |     0.001 |
-|       inst                                            |     0.001 |
+| top_level_proj                                        |     0.310 |
+|   cusum_inst                                          |     0.010 |
+|     cusum                                             |     0.009 |
+|   ewma_inst                                           |     0.038 |
+|     add_St_inst                                       |     0.007 |
+|       inst                                            |     0.007 |
+|     clasif_inst                                       |     0.001 |
+|       fp_comp_inst                                    |     0.001 |
 |     mul_p_St_inst                                     |     0.006 |
 |       inst                                            |     0.006 |
-|     mul_x_St_1_alpha_inst                             |     0.005 |
+|     mul_x_St_1_alpha_inst                             |     0.006 |
+|       inst                                            |     0.006 |
+|     sub_x_St_1_inst                                   |     0.005 |
 |       inst                                            |     0.005 |
-|     sub_x_St_1_inst                                   |     0.004 |
-|       inst                                            |     0.004 |
 |     sub_x_St_inst                                     |     0.006 |
 |       inst                                            |     0.006 |
-|   z_score_inst                                        |     0.248 |
-|     div_inst                                          |     0.025 |
-|       div_inst                                        |     0.023 |
-|       fifo_inst_1                                     |     0.001 |
-|     mean_inst                                         |     0.085 |
+|   z_score_inst                                        |     0.241 |
+|     div_inst                                          |     0.023 |
+|       div_inst                                        |     0.021 |
+|     mean_inst                                         |     0.088 |
 |       div_inst                                        |     0.019 |
-|       sum_buffering_instances[0].sum_buffering_inst_i |     0.014 |
+|       sum_buffering_instances[0].sum_buffering_inst_i |     0.016 |
 |       sum_buffering_instances[1].sum_buffering_inst_i |     0.016 |
-|       sum_buffering_instances[2].sum_buffering_inst_i |     0.015 |
+|       sum_buffering_instances[2].sum_buffering_inst_i |     0.016 |
 |       sum_buffering_instances[3].sum_buffering_inst_i |     0.016 |
-|     std_dev_inst                                      |     0.138 |
-|       div_inst                                        |     0.018 |
-|       sqrd_dev_inst                                   |     0.103 |
-|       sqrt_inst                                       |     0.017 |
+|     std_dev_inst                                      |     0.129 |
+|       div_inst                                        |     0.017 |
+|       sqrd_dev_inst                                   |     0.096 |
+|       sqrt_inst                                       |     0.016 |
 +-------------------------------------------------------+-----------+
 
 
